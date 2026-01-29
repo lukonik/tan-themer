@@ -11,7 +11,10 @@
     "types": [],
     "declaration": true,
     "emitDeclarationOnly": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "tanstack-theme": ["./src"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "playground"]
 }
