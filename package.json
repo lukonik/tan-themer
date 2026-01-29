@@ -57,6 +57,7 @@
     "vitest-browser-react": "^2.0.2"
   },
   "dependencies": {
+    "@changesets/cli": "^2.29.8",
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18"
   }
