@@ -35,8 +35,8 @@ Custom storage adapters can be provided via the `ThemeStorage` interface.
 ### FOUC Prevention (`src/script/`)
 Each storage type has a corresponding inline script that runs before React hydration to set the initial theme. Scripts are injected via `ThemeScript` component using `ScriptOnce`.
 
-### ScriptOnce (`src/ScriptOnce.tsx`)
-Custom implementation extending TanStack Router's ScriptOnce to support passing attributes to the script tag (needed for CSP nonce support).
+### ScriptOnce
+Uses TanStack Router's ScriptOnce component to inject the inline script.
 
 ### DOM Utilities (`src/dom-utils.ts`)
 - `handleAttribute` - Sets theme via `data-*` attribute or CSS class

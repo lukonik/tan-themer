@@ -55,8 +55,6 @@ export interface ThemeProviderProps extends React.PropsWithChildren<unknown> {
   attribute?: Attribute | Attribute[] | undefined;
   /** Mapping of theme name to HTML attribute value. Object where key is the theme name and value is the attribute value */
   value?: ValueObject | undefined;
-  /** Nonce string to pass to the inline script and style elements for CSP headers */
-  nonce?: string | undefined;
   /** Storage to use for persisting theme. Can be "localStorage", "sessionStorage", "cookie", or a custom ThemeStorage object. Defaults to "localStorage" */
   storage?: BuiltInStorage | ThemeStorage | undefined;
 }

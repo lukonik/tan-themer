@@ -3,9 +3,8 @@ import type { Attribute } from "./types";
 export const MEDIA = "(prefers-color-scheme: dark)";
 export const isServer = typeof window === "undefined";
 
-export const disableAnimation = (nonce?: string) => {
+export const disableAnimation = () => {
   const css = document.createElement("style");
-  if (nonce) css.setAttribute("nonce", nonce);
   css.appendChild(
     document.createTextNode(
       `*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}`,

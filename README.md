@@ -130,7 +130,6 @@ Or with Tailwind CSS using class variants:
 | `value` | `object` | `undefined` | Mapping of theme names to attribute values |
 | `forcedTheme` | `string` | `undefined` | Force a specific theme (ignores user preference) |
 | `disableTransitionOnChange` | `boolean` | `false` | Disable CSS transitions when changing themes |
-| `nonce` | `string` | `undefined` | Nonce for CSP headers |
 
 ### useTheme Hook
 
@@ -317,16 +316,6 @@ Prevent CSS transition flash when changing themes:
 
 ```tsx
 <ThemeProvider disableTransitionOnChange={true}>
-  <App />
-</ThemeProvider>
-```
-
-### CSP Support
-
-Add a nonce for Content Security Policy:
-
-```tsx
-<ThemeProvider nonce={nonce}>
   <App />
 </ThemeProvider>
 ```

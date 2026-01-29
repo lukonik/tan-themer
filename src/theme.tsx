@@ -46,7 +46,6 @@ const Theme = ({
   attribute = "class",
   value,
   children,
-  nonce,
   storage = "localStorage",
 }: ThemeProviderProps) => {
   const storageAdapter = useMemo(() => getStorageAdapter(storage), [storage]);
@@ -71,7 +70,7 @@ const Theme = ({
       }
 
       const name = value ? value[resolved] : resolved;
-      const enable = disableTransitionOnChange ? disableAnimation(nonce) : null;
+      const enable = disableTransitionOnChange ? disableAnimation() : null;
       const d = document.documentElement;
 
       if (Array.isArray(attribute)) {
@@ -93,7 +92,7 @@ const Theme = ({
 
       enable?.();
     },
-    [nonce],
+    [],
   );
 
   const setTheme = useCallback(
@@ -180,7 +179,6 @@ const Theme = ({
           defaultTheme,
           value,
           themes,
-          nonce,
           storage,
         }}
       />
