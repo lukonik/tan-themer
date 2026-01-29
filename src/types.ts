@@ -6,19 +6,15 @@ interface ValueObject {
 
 type DataAttribute = `data-${string}`;
 
-interface ScriptProps extends React.DetailedHTMLProps<
-  React.ScriptHTMLAttributes<HTMLScriptElement>,
-  HTMLScriptElement
-> {
-  [dataAttribute: DataAttribute]: any;
-}
-
 export interface ThemeStorage {
   getItem(key: string): string | null;
   setItem(key: string, value: string): void;
   removeItem?(key: string): void;
   /** Subscribe to storage changes from other tabs. Returns cleanup function. */
-  subscribe?(key: string, callback: (newValue: string | null) => void): () => void;
+  subscribe?(
+    key: string,
+    callback: (newValue: string | null) => void,
+  ): () => void;
 }
 
 export type BuiltInStorage = "localStorage" | "sessionStorage" | "cookie";
@@ -61,8 +57,6 @@ export interface ThemeProviderProps extends React.PropsWithChildren<unknown> {
   value?: ValueObject | undefined;
   /** Nonce string to pass to the inline script and style elements for CSP headers */
   nonce?: string | undefined;
-  /** Props to pass the inline script */
-  scriptProps?: ScriptProps | undefined;
   /** Storage to use for persisting theme. Can be "localStorage", "sessionStorage", "cookie", or a custom ThemeStorage object. Defaults to "localStorage" */
   storage?: BuiltInStorage | ThemeStorage | undefined;
 }

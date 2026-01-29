@@ -1,6 +1,6 @@
 import type { ThemeScript } from "../types";
 
-export const script: ThemeScript = (
+export const sessionStorageScript: ThemeScript = (
   attribute: any,
   storageKey: any,
   defaultTheme: any,

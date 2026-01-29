@@ -46,8 +46,9 @@ export const getStorageScript = (
     case "cookie":
       return cookieStorageScript;
     case "localStorage":
+      return localStorageScript;
     case undefined:
     default:
-      return localStorageScript;
+      return undefined;
   }
 };
