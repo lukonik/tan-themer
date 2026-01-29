@@ -32,7 +32,8 @@
     "play": "vite",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp && pnpm publish",
+    "release": "bunx @changesets/cli publish",
+    "version": "bunx @changesets/cli version",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
