@@ -34,7 +34,7 @@
     "typecheck": "tsc --noEmit",
     "release": "bunx @changesets/cli publish",
     "version": "bunx @changesets/cli version",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "bun run build"
   },
   "peerDependencies": {
     "@tanstack/react-router": "^1.157.16",
