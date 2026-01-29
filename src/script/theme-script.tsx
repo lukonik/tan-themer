@@ -1,5 +1,5 @@
+import { ScriptOnce } from "@tanstack/react-router";
 import { memo } from "react";
-import { ScriptOnce } from "../ScriptOnce";
 import { getStorageScript } from "../storage/storage";
 import type { ThemeProviderProps } from "../types";
 
@@ -13,12 +13,14 @@ export const ThemeScript = memo(
     defaultTheme,
     value,
     themes,
-    scriptProps,
     storage = "localStorage",
   }: Omit<ThemeProviderProps, "children"> & {
     defaultTheme: string;
   }) => {
     const script = getStorageScript(storage);
+    if (!script) {
+      return;
+    }
     const scriptArgs = JSON.stringify([
       attribute,
       storageKey,
@@ -29,11 +31,6 @@ export const ThemeScript = memo(
       enableSystem,
       enableColorScheme,
     ]).slice(1, -1);
-    return (
-      <ScriptOnce
-        attributes={scriptProps}
-        children={`(${script.toString()})(${scriptArgs})`}
-      />
-    );
+    return <ScriptOnce children={`(${script.toString()})(${scriptArgs})`} />;
   },
 );

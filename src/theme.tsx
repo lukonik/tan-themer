@@ -6,14 +6,14 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState
+  useState,
 } from "react";
 import {
   disableAnimation,
   getSystemTheme,
   handleAttribute,
   isServer,
-  MEDIA
+  MEDIA,
 } from "./dom-utils";
 import { ThemeScript } from "./script/theme-script";
 import { getStorageAdapter } from "./storage/storage";
@@ -47,7 +47,6 @@ const Theme = ({
   value,
   children,
   nonce,
-  scriptProps,
   storage = "localStorage",
 }: ThemeProviderProps) => {
   const storageAdapter = useMemo(() => getStorageAdapter(storage), [storage]);
@@ -182,7 +181,6 @@ const Theme = ({
           value,
           themes,
           nonce,
-          scriptProps,
           storage,
         }}
       />
