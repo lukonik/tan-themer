@@ -44,7 +44,7 @@ export const script = (
     updateDOM(forcedTheme);
   } else {
     try {
-      const themeName = localStorage.getItem(storageKey) || defaultTheme;
+      const themeName = sessionStorage.getItem(storageKey) || defaultTheme;
       const isSystem = enableSystem && themeName === "system";
       const theme = isSystem ? getSystemTheme() : themeName;
       updateDOM(theme);

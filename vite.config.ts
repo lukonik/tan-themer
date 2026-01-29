@@ -2,10 +2,16 @@
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 import { playwright } from "@vitest/browser-playwright";
+import path from "node:path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
   root: "./playground",
+  resolve: {
+    alias: {
+      "tanstack-theme": path.resolve(__dirname, "./src"),
+    },
+  },
   plugins: [
     tanstackRouter({
       target: "react",

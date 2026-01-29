@@ -40,11 +40,16 @@ export const script = (
       : "light";
   }
 
+  function getCookie(name: string) {
+    const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+    return match ? match[2] : null;
+  }
+
   if (forcedTheme) {
     updateDOM(forcedTheme);
   } else {
     try {
-      const themeName = localStorage.getItem(storageKey) || defaultTheme;
+      const themeName = getCookie(storageKey) || defaultTheme;
       const isSystem = enableSystem && themeName === "system";
       const theme = isSystem ? getSystemTheme() : themeName;
       updateDOM(theme);
