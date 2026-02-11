@@ -6,16 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a React theme management library specifically designed for TanStack Router. It provides a `ThemeProvider` component and `useTheme` hook for managing light/dark/system themes with SSR support and no flash of unstyled content (FOUC).
 
-## Commands
 
-```bash
-bun install          # Install dependencies
-bun run build        # Build library with tsdown
-bun run dev          # Watch mode for development
-bun run play         # Run playground (Vite dev server)
-bun run test         # Run browser tests (Vitest + Playwright)
-bun run typecheck    # TypeScript type checking
-```
 
 ## Architecture
 

@@ -47,9 +47,12 @@
     "build": "tsdown",
     "dev": "tsdown --watch",
     "play": "vite",
+    "play:build": "vite build",
+    "play:preview": "vite preview",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "bun run build"
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "@tanstack/react-router": ">=1.0.0",

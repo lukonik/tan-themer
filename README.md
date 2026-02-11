@@ -442,27 +442,7 @@ import type {
 } from "tan-themer";
 ```
 
-## Development
 
-```bash
-# Install dependencies
-bun install
-
-# Build library
-bun run build
-
-# Watch mode
-bun run dev
-
-# Run playground
-bun run play
-
-# Run tests
-bun run test
-
-# Type checking
-bun run typecheck
-```
 
 ## Browser Support
 
